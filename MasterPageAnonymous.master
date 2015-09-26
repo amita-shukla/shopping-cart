@@ -1,0 +1,117 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPageAnonymous.master.cs" Inherits="MasterPage" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+    <title> Deco House </title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        body
+        {
+            font: calibri;
+            font-size:medium;
+            }
+            
+        .style1 {
+            width: 100%;
+        /*  margin-left: 100px;
+           margin-right: 100px; */
+                   }
+        
+        .main_content {
+            margin-left: 300px;
+            margin-right:300px;
+            
+            
+            }
+        
+        .footer
+        {
+            letter-spacing:3px;
+            padding-top:15px;
+            text-align:center;
+            }
+         
+        hr
+        {
+           height: 5px;
+           background-color: Black;            
+        }
+        
+        .center
+        {
+            margin-left: auto;
+            margin-right:auto;
+            text-align:center;
+            }
+        
+        .title_image
+        {
+            display:block;
+            margin-left:auto;
+            margin-right:auto;
+            }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <table class="style1">
+        <tr >
+            <td>
+                 <!-- Logo Pic -->
+                  <asp:Image ID="Image1" runat="server" ImageUrl="~/Css Resources/logo.jpg" 
+                     Height="166px" Width="278px" CssClass="title_image" /> 
+                &nbsp;
+            </td>
+        </tr>
+        <tr>
+            <td>
+            <!-- Title Image -->
+               <asp:Image ID="Image2" runat="server" ImageUrl="~/Css Resources/Deco House.jpg" CssClass="title_image" /> 
+                <hr  />
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td>
+            <!-- Menu Bar-->
+            <!--
+                <asp:Menu ID="Menu1" runat="server" Height="16px" Orientation="Horizontal" 
+                    Width="1132px">
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/Home.aspx" Text="Home" Value="Home"></asp:MenuItem>
+                        <asp:MenuItem Text="Project Details" Value="Project Details"></asp:MenuItem>
+                        <asp:MenuItem Text="Contact Us" Value="Contact Us"></asp:MenuItem>
+                    </Items>
+
+                </asp:Menu>
+                -->
+                &nbsp;</td>
+        </tr>
+        <tr >
+        
+            <td >
+            <div>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server" >
+                <!-- Content Place Holder containing the content of the page -->
+                </asp:ContentPlaceHolder>
+                <br />
+                <hr />
+                &nbsp;
+             </div>
+             </td>
+                
+        </tr>
+        <tr>
+            <td class="footer">
+            <!-- Footer -->
+            &lt;  copyright &copy;2014 &gt; <br />
+            The content is copyrighted to Amita Shukla and may not be reproduced on other websites.
+                &nbsp;</td>
+        </tr>
+    </table>
+    
+    </form>
+</body>
+</html>

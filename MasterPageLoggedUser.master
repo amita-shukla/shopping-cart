@@ -1,0 +1,145 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="MasterPageLoggedUser.master.cs" Inherits="MasterPageLoggedUser" %>
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+    <title> Welcome - Deco House </title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <style type="text/css">
+        body
+        {
+            font: calibri;
+            font-size:medium;
+            }
+            
+        .style1 {
+            width: 100%;
+        /*  margin-left: 100px;
+           margin-right: 100px; */
+                   }
+        
+        .main_content {
+            margin-left: 300px;
+            margin-right:300px;
+            
+            
+            }
+        
+        .footer
+        {
+            letter-spacing:3px;
+            padding-top:15px;
+            text-align:center;
+            }
+         
+        hr
+        {
+           height: 5px;
+           background-color: Black;            
+        }
+        
+        .center
+        {
+            margin-left: auto;
+            margin-right:auto;
+            text-align:center;
+            }
+        
+        .title_image
+        {
+            display:block;
+            margin-left:auto;
+            margin-right:auto;
+            }
+        
+        .login_status
+        {
+            float: right;
+            margin-right:10px;
+            }
+    </style>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <table class="style1">
+        <tr >
+            <td>
+               <!-- Logo Pic -->
+               <asp:Image ID="Image1" runat="server" ImageUrl="~/Css Resources/logo.jpg" 
+                    Height="117px" Width="237px" /> 
+                &nbsp;</td>
+            <td>
+            <div>
+            <!-- logon status and logout link -->
+                 <asp:LoginName ID="LoginName1" runat="server"  FormatString="Welcome {0}" CssClass="login_status" /> <br />
+                 <asp:LoginStatus ID="LoginStatus1" runat="server" 
+                            LogoutAction="RedirectToLoginPage" CssClass="login_status" />
+                </div>
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+            <!-- Title Image -->
+               <asp:Image ID="Image2" runat="server" ImageUrl="~/Css Resources/Deco House.jpg" CssClass="title_image" /> 
+                <hr  />
+                &nbsp;</td>
+        </tr>
+        <tr>
+            <td colspan="2">
+            <div>
+            <!-- Menu Bar-->
+                <asp:Menu ID="Menu1" runat="server" Height="16px" Orientation="Horizontal" 
+                    Width="854px" BackColor="#FFFBD6" DynamicHorizontalOffset="2" 
+                    Font-Names="Verdana" Font-Size="1.1em" ForeColor="#990000" 
+                    StaticSubMenuIndent="10px" CssClass="center">
+                    <DynamicHoverStyle BackColor="#990000" ForeColor="White" />
+                    <DynamicMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                    <DynamicMenuStyle BackColor="#FFFBD6" />
+                    <DynamicSelectedStyle BackColor="#FFCC66" />
+                    <Items>
+                        <asp:MenuItem NavigateUrl="~/Home.aspx" Text="Home" Value="Home"></asp:MenuItem>
+                        <asp:MenuItem Text="Project Details" Value="Project Details" 
+                            NavigateUrl="~/ProjectDetails.aspx"></asp:MenuItem>
+                        <asp:MenuItem Text="Contact Us" Value="Contact Us" 
+                            NavigateUrl="~/ContactUs.aspx"></asp:MenuItem>
+                    </Items>
+
+                    <StaticHoverStyle BackColor="#990000" ForeColor="White" />
+                    <StaticMenuItemStyle HorizontalPadding="5px" VerticalPadding="2px" />
+                    <StaticSelectedStyle BackColor="#FFCC66" />
+
+                </asp:Menu>
+            </div>
+                &nbsp;
+                <br />
+                </td>
+        </tr>
+        <tr >
+        
+            <td colspan="2" >
+            <div>
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server" >
+                <!-- Content Place Holder containing the content of the page -->
+                </asp:ContentPlaceHolder>
+                <br />
+                <hr />
+                &nbsp;
+             </div>
+             </td>
+                
+        </tr>
+        <tr>
+            <td colspan="2" class="footer">
+            <!-- Footer -->
+            &lt;  copyright &copy;2014 &gt; <br />
+            The content is copyrighted to Amita Shukla and may not be reproduced on other websites.
+                &nbsp;</td>
+        </tr>
+    </table>
+    
+    </form>
+</body>
+</html>
